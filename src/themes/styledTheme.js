@@ -1,11 +1,11 @@
 export default {
   colors: {
-    primary: '#00C6BF',
-    accent: '#FE0006',
+    primary: '#022063',
+    accent: '#35cd93',
     third: '#FFA900',
     gray: '#e0e0e0',
     darkGray: '#383838',
-    lightGray: '#F9FBFB',
+    lightGray: '#f4f5f8',
     white: '#ffffff',
     error: '#e53935',
     success: '#4caf50',

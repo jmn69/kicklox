@@ -1,16 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import T from 'prop-types';
-import { withTheme } from 'styled-components';
-
-import Card from 'common/components/Card';
 import Loader from 'common/components/Loader';
-import Button from 'common/components/Button';
 
-class SecurityComponent extends Component {
+import { Container, LeftContainer, RightContainer } from './Messages.s';
+import MenuContactsContainer from './MenuContactsContainer';
+import MessagesContent from './MessagesContent';
+
+export default class SecurityComponent extends Component {
   static propTypes = {
     fetchMessages: T.func.isRequired,
     isLoading: T.bool.isRequired,
-    // theme: T.any.isRequired,
   };
 
   state = { initialRenderComplete: false };
@@ -30,24 +29,23 @@ class SecurityComponent extends Component {
   }
 
   render() {
-    // const { theme, isLoading, messages } = this.props;
     const { initialRenderComplete } = this.state;
 
     return (
       <Fragment>
         {!initialRenderComplete ? (
-          <Loader fullPage />
+          <Loader fullPage text="Chargement des messages..." />
         ) : (
-          <div>
-            app
-            <Card>
-              <Button>test</Button>
-            </Card>
-          </div>
+          <Container>
+            <LeftContainer>
+              <MenuContactsContainer />
+            </LeftContainer>
+            <RightContainer>
+              <MessagesContent />
+            </RightContainer>
+          </Container>
         )}
       </Fragment>
     );
   }
 }
-
-export default withTheme(SecurityComponent);

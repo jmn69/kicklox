@@ -5,6 +5,12 @@ const setCurrentRecipient = recipientUserId => ({
   payload: recipientUserId,
 });
 
+const sendNewMessage = newMessage => ({
+  type: types.SEND_NEW_MESSAGE,
+  payload: newMessage,
+});
+
 export default {
   setCurrentRecipient,
+  sendNewMessage,
 };

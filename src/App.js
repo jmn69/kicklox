@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { ThemeProvider } from 'styled-components';
 
 import Fonts from './themes/Fonts';
@@ -9,7 +9,7 @@ import './css/Init.css';
 import MessagesContainer from './app/messages/MessagesContainer';
 import { Header, Container, AppContainer } from './App.s';
 
-library.add(faCircleNotch);
+library.add(faCircleNotch, faPaperPlane);
 
 class App extends Component {
   componentDidMount() {

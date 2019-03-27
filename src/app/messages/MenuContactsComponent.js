@@ -5,6 +5,8 @@ import Circle from 'common/components/Circle';
 import Avatar from 'react-avatar';
 import T from 'prop-types';
 
+import { unReadType } from './types';
+
 import {
   UnreadMessageContainer,
   UnreadText,
@@ -15,14 +17,36 @@ import {
 export default class MenuContactsComponent extends Component {
   static propTypes = {
     setCurrentRecipient: T.func.isRequired,
+    currentRecipientId: T.number,
+    unRead: T.arrayOf(unReadType),
+  };
+
+  static defaultProps = {
+    currentRecipientId: null,
+    unRead: [],
   };
 
   render() {
-    const { setCurrentRecipient } = this.props;
+    const { setCurrentRecipient, currentRecipientId, unRead } = this.props;
+
+    // with a real data model it should be done in the data iteration
+    const countOne =
+      unRead.find(ur => ur.userId === 1) &&
+      unRead.find(ur => ur.userId === 1).count;
+    const countTwo =
+      unRead.find(ur => ur.userId === 2) &&
+      unRead.find(ur => ur.userId === 2).count;
+    const countThree =
+      unRead.find(ur => ur.userId === 3) &&
+      unRead.find(ur => ur.userId === 3).count;
 
     return (
       <ListGroup>
-        <ListItem onClick={() => setCurrentRecipient(1)} clickable>
+        <ListItem
+          active={currentRecipientId === 1}
+          onClick={() => setCurrentRecipient(1)}
+          clickable
+        >
           <AvatarContainer>
             <Avatar
               size="50px"
@@ -32,22 +56,34 @@ export default class MenuContactsComponent extends Component {
             />
             <NameText>Alexandre</NameText>
           </AvatarContainer>
-          <UnreadMessageContainer>
-            <Circle>5</Circle>
-            <UnreadText>non lu</UnreadText>
-          </UnreadMessageContainer>
+          {countOne && countOne > 0 ? (
+            <UnreadMessageContainer>
+              <Circle>{countOne}</Circle>
+              <UnreadText>non lu</UnreadText>
+            </UnreadMessageContainer>
+          ) : null}
         </ListItem>
-        <ListItem onClick={() => setCurrentRecipient(2)} clickable>
+        <ListItem
+          active={currentRecipientId === 2}
+          onClick={() => setCurrentRecipient(2)}
+          clickable
+        >
           <AvatarContainer>
             <Avatar size="50px" round name="Johanna Sater" />
             <NameText>Johanna</NameText>
           </AvatarContainer>
-          <UnreadMessageContainer>
-            <Circle>2</Circle>
-            <UnreadText>non lu</UnreadText>
-          </UnreadMessageContainer>
+          {countTwo && countTwo > 0 ? (
+            <UnreadMessageContainer>
+              <Circle>{countTwo}</Circle>
+              <UnreadText>non lu</UnreadText>
+            </UnreadMessageContainer>
+          ) : null}
         </ListItem>
-        <ListItem onClick={() => setCurrentRecipient(3)} clickable>
+        <ListItem
+          active={currentRecipientId === 3}
+          onClick={() => setCurrentRecipient(3)}
+          clickable
+        >
           <AvatarContainer>
             <Avatar
               size="50px"
@@ -57,18 +93,28 @@ export default class MenuContactsComponent extends Component {
             />
             <NameText>Thomas</NameText>
           </AvatarContainer>
-          <UnreadMessageContainer>
-            <Circle>1</Circle>
-            <UnreadText>non lu</UnreadText>
-          </UnreadMessageContainer>
+          {countThree && countThree > 0 ? (
+            <UnreadMessageContainer>
+              <Circle>{countThree}</Circle>
+              <UnreadText>non lu</UnreadText>
+            </UnreadMessageContainer>
+          ) : null}
         </ListItem>
-        <ListItem onClick={() => setCurrentRecipient(4)} clickable>
+        <ListItem
+          active={currentRecipientId === 4}
+          onClick={() => setCurrentRecipient(4)}
+          clickable
+        >
           <AvatarContainer>
             <Avatar size="50px" round name="Julien Tomasso" />
             <NameText>Julien</NameText>
           </AvatarContainer>
         </ListItem>
-        <ListItem onClick={() => setCurrentRecipient(5)} clickable>
+        <ListItem
+          active={currentRecipientId === 5}
+          onClick={() => setCurrentRecipient(5)}
+          clickable
+        >
           <AvatarContainer>
             <Avatar
               size="50px"

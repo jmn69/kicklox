@@ -3,6 +3,7 @@ import { timeout } from 'common/utils/mockApi';
 import Creators from './actions';
 
 const setCurrentRecipient = Creators.setCurrentRecipient;
+const sendNewMessage = Creators.sendNewMessage;
 
 const mockedMessages = [
   {
@@ -99,7 +100,7 @@ const mockedMessages = [
       },
       {
         id: 7,
-        message: 'Nope désolé je fais un test technique ;)',
+        message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         sent: '25/03/2019',
         read: true,
         currentUser: true,
@@ -107,14 +108,15 @@ const mockedMessages = [
       {
         id: 8,
         message:
-          'Ah dommage je voulais te proposer de sortir boire un verre, une prochaine fois alors !',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae euismod enim. Etiam et arcu libero. Pellentesque ornare posuere lacus sit amet elementum. Maecenas sagittis libero in tellus suscipit egestas. Donec sollicitudin at urna ut ornare. Sed semper orci et lorem mollis rutrum. Aliquam non tincidunt nisi. ',
         sent: '25/03/2019',
         read: true,
         public: false,
       },
       {
         id: 9,
-        message: 'Yes on se tient au jus pour la prochaine fois ! bonne soirée',
+        message:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu tellus non velit eleifend pellentesque. Donec id tristique neque. Proin sed mattis felis, hendrerit rhoncus massa.',
         sent: '25/03/2019',
         read: true,
         public: false,
@@ -122,7 +124,8 @@ const mockedMessages = [
       },
       {
         id: 10,
-        message: 'Toi aussi',
+        message:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu tellus non velit eleifend pellentesque. Donec id tristique neque. Proin sed mattis felis, hendrerit rhoncus massa.',
         sent: '25/03/2019',
         read: true,
         public: false,
@@ -159,7 +162,8 @@ const mockedMessages = [
       },
       {
         id: 7,
-        message: 'Nope désolé je fais un test technique ;)',
+        message:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu tellus non velit eleifend pellentesque. Donec id tristique neque. Proin sed mattis felis, hendrerit rhoncus massa.',
         sent: '25/03/2019',
         read: true,
         currentUser: true,
@@ -167,14 +171,15 @@ const mockedMessages = [
       {
         id: 8,
         message:
-          'Ah dommage je voulais te proposer de sortir boire un verre, une prochaine fois alors !',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae euismod enim. Etiam et arcu libero. Pellentesque ornare posuere lacus sit amet elementum. Maecenas sagittis libero in tellus suscipit egestas. Donec sollicitudin at urna ut ornare. Sed semper orci et lorem mollis rutrum. Aliquam non tincidunt nisi. ',
         sent: '25/03/2019',
         read: true,
         public: false,
       },
       {
         id: 9,
-        message: 'Yes on se tient au jus pour la prochaine fois ! bonne soirée',
+        message:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae euismod enim. Etiam et arcu libero. Pellentesque ornare posuere lacus sit amet elementum. Maecenas sagittis libero in tellus suscipit egestas. Donec sollicitudin at urna ut ornare. Sed semper orci et lorem mollis rutrum. Aliquam non tincidunt nisi. ',
         sent: '25/03/2019',
         read: true,
         public: false,
@@ -182,7 +187,7 @@ const mockedMessages = [
       },
       {
         id: 10,
-        message: 'Toi aussi',
+        message: 'Bye',
         sent: '25/03/2019',
         read: true,
         public: false,
@@ -219,5 +224,6 @@ const fetchMessages = makeBasicAPIActions(
 
 export default {
   setCurrentRecipient,
+  sendNewMessage,
   fetchMessages,
 };

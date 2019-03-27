@@ -4,7 +4,7 @@ import Loader from 'common/components/Loader';
 
 import { Container, LeftContainer, RightContainer } from './Messages.s';
 import MenuContactsContainer from './MenuContactsContainer';
-import MessagesContent from './MessagesContent';
+import MessagesContentContainer from './MessagesContentContainer';
 
 export default class SecurityComponent extends Component {
   static propTypes = {
@@ -41,7 +41,7 @@ export default class SecurityComponent extends Component {
               <MenuContactsContainer />
             </LeftContainer>
             <RightContainer>
-              <MessagesContent />
+              <MessagesContentContainer />
             </RightContainer>
           </Container>
         )}

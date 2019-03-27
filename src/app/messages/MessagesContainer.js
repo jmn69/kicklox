@@ -3,7 +3,7 @@ import MessagesComponent from './MessagesComponent';
 import { messagesOperations } from './redux';
 
 const mapStateToProps = state => {
-  const { data, isLoading, error } = state.messages.fetchMessages;
+  const { data, isLoading, error } = state.messages;
   return {
     isLoading,
     error,

@@ -37,6 +37,7 @@ const Button = styled.button`
   line-height: ${props => getLineHeight(props)};
   font-weight: bold;
   color: ${props => props.color};
+  background: ${props => props.bg};
   border-radius: 4px;
   webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -44,6 +45,8 @@ const Button = styled.button`
   text-align: middle;
   text-decoration: none;
   appearance: none;
+  padding: 3px 10px;
+  cursor: pointer;
 
   &:disabled: {
     opacity: 0.25;
@@ -62,7 +65,7 @@ Button.propTypes = {
 Button.defaultProps = {
   size: 'medium',
   color: 'white',
-  bg: 'green',
+  bg: '#35cd93',
 };
 
 export default Button;

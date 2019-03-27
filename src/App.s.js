@@ -16,8 +16,6 @@ export const Header = styled.div`
 export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  overflow-x: hidden;
   width: 100%;
   box-sizing: border-box;
   position: relative;
